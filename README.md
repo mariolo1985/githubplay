@@ -1,1 +1,1 @@
-# githubplay
+# Github REST API exercise
