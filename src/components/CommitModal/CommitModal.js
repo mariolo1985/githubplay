@@ -89,33 +89,33 @@ const CommitModal = ({
   }, [])
 
   return (
-    <div css={modalStyles}>
-      <div className='modal-container'>      
-        <div className='modal-close' onClick={handleHideModal}>
+    <div css={modalStyles} data-testid='commit-modal'>
+      <div className='modal-container'>
+        <div className='modal-close' data-testid='close-button' onClick={handleHideModal}>
           <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="CancelOutlinedIcon" aria-label="fontSize large"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"></path></svg>
         </div>
         <div className='modal-title'>{repoName} commits</div>
         <div className='commits'>
           {
-            commitData.map(commitItem => {
+            commitData.map(commitItem => {              
               const commitId = commitItem?.sha
               const authorName = commitItem?.commit?.author?.name
               const commitMsg = commitItem?.commit?.message
               const commitDate = commitItem?.commit?.committer?.date
-
+              
               return (
                 <div className='commit' key={commitId}>
                   <div className='commit-section'>
                     <div className='commit-label'>Author:</div>
-                    <div className='commit-value'>{authorName}</div>
+                    <div className='commit-value' data-testid='author-value'>{authorName}</div>
                   </div>
                   <div className='commit-section'>
                     <div className='commit-label'>Commit Message:</div>
-                    <div className='commit-value'>{commitMsg}</div>
+                    <div className='commit-value' data-testid='message-value'>{commitMsg}</div>
                   </div>
                   <div className='commit-section'>
                     <div className='commit-label'>Commit date:</div>
-                    <div className='commit-value'>{commitDate && new Date(`${commitDate}`).toDateString()}</div>
+                    <div className='commit-value' data-testid='date-value'>{commitDate && new Date(`${commitDate}`).toDateString()}</div>
                   </div>
                 </div>
               )

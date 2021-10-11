@@ -57,30 +57,30 @@ const RepoCard = ({
   }
 
   return (
-    <div className='repo-card' css={repoCardStyles} onClick={onCardClick}>
+    <div className='repo-card' css={repoCardStyles} data-testid='card' onClick={onCardClick}>
       <div className='repo-card-section'>
-        <div className='repo-card-title'>{repoName}</div>
+        <div className='repo-card-title' data-testid='card-title'>{repoName}</div>
       </div>
       <div className='repo-card-section'>
         <div className='repo-card-label'>Owner:</div>
-        <div className='repo-card-text'>{owner}</div>
+        <div className='repo-card-text' data-testid='owner-value'>{owner}</div>
       </div>
       <div className='repo-card-section'>
         <div className='repo-card-label'>Description:</div>
-        <div className='repo-card-text'>{description}</div>
+        <div className='repo-card-text' data-testid='description-value'>{description}</div>
       </div>
       <div className='repo-card-section metrics'>
         <div className='metrics-section'>
           <div className='metrics-label'>Stars:</div>
-          <div className='metrics-value'>{starsCount}</div>
+          <div className='metrics-value' data-testid='star-value'>{starsCount}</div>
         </div>
         <div className='metrics-section'>
           <div className='metrics-label'>Forks:</div>
-          <div className='metrics-value'>{forksCount}</div>
+          <div className='metrics-value' data-testid='fork-value'>{forksCount}</div>
         </div>
         <div className='metrics-section'>
           <div className='metrics-label'>Watchers:</div>
-          <div className='metrics-value'>{watchersCount}</div>
+          <div className='metrics-value' data-testid='watcher-value'>{watchersCount}</div>
         </div>
       </div>
       <a href={url} target='_blank' rel='noreferrer' rel='noopener'>Repo link</a>
