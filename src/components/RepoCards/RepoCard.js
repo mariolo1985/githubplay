@@ -1,41 +1,102 @@
 import React from 'react'
-import { string } from 'prop-types'
+import { func, string, number } from 'prop-types'
 import { css } from '@emotion/react'
 
 const repoCardStyles = css`
-  padding: 2rem;
+  border: 1px dashed #555555;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+
+  &:hover {
+    background: #e2e2e2;
+    cursor: pointer;
+  }
+
+  .repo-card {    
+    &-section {      
+      margin: 1rem 0;
+    }
+
+    &-title {
+      font-size: 20px;
+      text-decoration: underline;
+    }
+
+    &-label {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    &-label {
+      font-weight: 600;
+    }
+  }
 `
 
 const RepoCard = ({
+  description,
+  forksCount,
   repoName,
-  owner
+  setCommitModalData,
+  starsCount,
+  owner,
+  url,
+  watchersCount
 }) => {
   const onCardClick = () => {
-    fetch(`https://api.github.com/repos/${owner}/${repoName}/commits`, {
-      method: 'GET',
-      headers: {
-        accept: 'appliation/vnd.github.v3+json',
-      }
+    setCommitModalData({
+      repoName,
+      owner
     })
-      .then(response => {
-        return response.json()
-      })
-      .then(commits => {
-        console.info({ commits })
-      })
-      .catch(err => console.error(err))
   }
+
   return (
-    <div css={repoCardStyles} onClick={onCardClick}>
-      <div>{`Name: ${repoName}`}</div>
-      <div>{`Owner: ${owner}`}</div>
+    <div className='repo-card' css={repoCardStyles} onClick={onCardClick}>
+      <div className='repo-card-section'>
+        <div className='repo-card-title'>{repoName}</div>
+      </div>
+      <div className='repo-card-section'>
+        <div className='repo-card-label'>Owner:</div>
+        <div className='repo-card-text'>{owner}</div>
+      </div>
+      <div className='repo-card-section'>
+        <div className='repo-card-label'>Description:</div>
+        <div className='repo-card-text'>{description}</div>
+      </div>
+      <div className='repo-card-section metrics'>
+        <div className='metrics-section'>
+          <div className='metrics-label'>Stars:</div>
+          <div className='metrics-value'>{starsCount}</div>
+        </div>
+        <div className='metrics-section'>
+          <div className='metrics-label'>Forks:</div>
+          <div className='metrics-value'>{forksCount}</div>
+        </div>
+        <div className='metrics-section'>
+          <div className='metrics-label'>Watchers:</div>
+          <div className='metrics-value'>{watchersCount}</div>
+        </div>
+      </div>
+      <a href={url} target='_blank' rel='noreferrer' rel='noopener'>Repo link</a>
     </div>
   )
 }
 
 RepoCard.propTypes = {
+  description: string,
+  forksCount: number,
   repoName: string,
-  owner: string
+  setCommitModalData: func,
+  starsCount: number,
+  owner: string,
+  url: string,
+  watchersCount: number
 }
 
 export default RepoCard
