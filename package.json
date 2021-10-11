@@ -20,16 +20,15 @@
     "lint": "eslint src"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
+    "@babel/core": "^7.15.8",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/plugin-proposal-export-default-from": "^7.14.5",
-    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.2.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.24.2",
@@ -44,6 +43,8 @@
     "@emotion/babel-preset-css-prop": "^11.2.0",
     "@emotion/cache": "^11.4.0",
     "@emotion/react": "^11.4.1",
+    "core-js": "3.18.2",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

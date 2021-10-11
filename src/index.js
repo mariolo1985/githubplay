@@ -1,12 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { css } from '@emotion/react'
+import { Global, css } from '@emotion/react'
+import App from './components/App'
 
-const appStyles = css`
-  background: green;
+const globalStyles = css`
+  body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
 `
 
 ReactDOM.render(
-  <div css={appStyles}>hello world</div>,
+  <>
+    <App />
+    <Global styles={globalStyles} />
+  </>,
   document.getElementById('app')
 )
