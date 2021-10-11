@@ -52,7 +52,8 @@ const modalStyles = css`
     overflow-y: auto;
   }
   .commit {
-    margin: 2rem 0;  
+    margin: 2rem 0;
+    padding: 1rem;
     background: rgba(0,0,0,0.1);
 
     &-section {
@@ -77,6 +78,7 @@ const CommitModal = ({
       method: 'GET',
       headers: {
         accept: 'application/vnd.github.v3+json',
+        "Authorization": 'token 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'
       }
     })
       .then(response => {
