@@ -10,7 +10,7 @@ An exercise with Github rest api.
 ## Pre-req
 
 Node v12+
-- Run `nvm use` if nvm is installed
+*note:* Run `nvm use` if nvm is installed
 
 ## Installation
 
@@ -22,7 +22,7 @@ Node v12+
 
 ## Running tests
 
-`yarn test`
+`yarn test` or `npm test`
 
 ## Things I would do differently/add with more time
 
