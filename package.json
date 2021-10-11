@@ -13,8 +13,7 @@
     "url": "https://github.com/mariolo1985/githubplay/issues"
   },
   "homepage": "https://github.com/mariolo1985/githubplay#readme",
-  "scripts": {
-    "build": "yarn clean && cross-env NODE_ENV=production webpack --config webpack.prod.js",
+  "scripts": {    
     "start": "yarn clean && cross-env NODE_ENV=development webpack --config webpack.dev.js && webpack-dev-server --config webpack.dev.js",
     "clean": "node cleandist.js",
     "lint": "eslint src",
