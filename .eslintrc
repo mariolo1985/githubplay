@@ -1,0 +1,38 @@
+{
+  "extends": "eslint-config-airbnb",
+  "env": {
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "indent": [
+      "error",
+      4
+    ],
+    "linebreak-style": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/jsx-indent": [
+      true,
+      12
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ]
+  },
+  "settings": {
+    "import/parser": "babel-eslint"
+  }
+}

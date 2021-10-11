@@ -1,0 +1,50 @@
+{
+  "name": "githubplay",
+  "version": "0.0.1",
+  "description": "github rest api exercise",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariolo1985/githubplay.git"
+  },
+  "author": "mariolo1985 <mario@mariolo.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mariolo1985/githubplay/issues"
+  },
+  "homepage": "https://github.com/mariolo1985/githubplay#readme",
+  "scripts": {
+    "build": "yarn clean && cross-env NODE_ENV=production webpack --config webpack.prod.js",
+    "start": "yarn clean && cross-env NODE_ENV=development webpack --config webpack.dev.js && webpack-dev-server --config webpack.dev.js",
+    "clean": "node cleandist.js",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-export-default-from": "^7.14.5",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "fs-extra": "^10.0.0",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
+  },
+  "dependencies": {
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@emotion/cache": "^11.4.0",
+    "@emotion/react": "^11.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
